@@ -1,0 +1,43 @@
+APP 		:= bin
+
+CCFLAGS 	:= -Wall -pedantic
+CFLAGS		:= $(CCFLAGS)
+#CC			:= g++
+CC			:= gcc
+#LIBS		:= -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer
+MKDIR		:= mkdir -p
+SRC			:= source
+OBJ			:= obj
+
+ALLCS		:= $(shell find $(SRC) -type f -iname *.c)
+ALLCSOBJ	:= $(patsubst %.c,%.o,$(ALLCS))
+#ALLCPPS		:= $(shell find $(SRC) -type f -iname *.cpp)
+#ALLCPPSOBJ	:= $(patsubst %.cpp,%.o,$(ALLCPPS))
+SUBDIRS		:= $(shell find $(SRC) -type d)
+OBJSUBDIRS 	:= $(patsubst $(SRC)%,$(OBJ)%,$(SUBDIRS))
+
+.PHONY: dir
+
+$(APP) : $(OBJSUBDIRS) $(ALLCSOBJ) $(ALLCSOBJ)
+	$(CC) -o $(APP) $(patsubst $(SRC)%,$(OBJ)%,$(ALLCSOBJ) $(ALLCSOBJ)) $(LIBS)
+
+%.o : %.c
+	$(CC) -o $(patsubst $(SRC)%,$(OBJ)%,$@) -c $^ $(CFLAGS)
+
+#%.o : %.cpp
+#	$(CC) -o $(patsubst $(SRC)%,$(OBJ)%,$@) -c $^ $(CCFLAGS)
+#dir no es un fichero de salida
+#dir es un objetivo .PHONY - esto se lanza solo cuando está desactualizado
+dir:
+	$(info $(SUBDIRS))
+	$(info $(OBJSUBDIRS))
+	$(info $(ALLCS))
+	$(info $(ALLCSOBJ))
+	#$(info $(ALLCPPS))
+	#$(info $(ALLCPPSOBJ))
+
+run:
+	time make -j4 && ./$(APP)
+
+$(OBJSUBDIRS):
+	$(MKDIR) $(OBJSUBDIRS)
