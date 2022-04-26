@@ -3,18 +3,8 @@ public class Principal{
     public static void main( String[] args ) {
  
         // Solución, agregar el tipo de dato en los parámetros
-        Principal.engine((int x, int y) -> x + y );
-        Principal.engine((int x, int y) -> x * y );
-        Principal.engine((int x, int y) -> x / y );
-        Principal.engine((int x, int y) -> x - y );
-        Principal.engine((int x, int y) -> x % y );
-
-        System.out.println( "" );
-        Principal.engine((long x, long y) -> x + y );
-        Principal.engine((long x, long y) -> x * y );
-        Principal.engine((long x, long y) -> x / y );
-        Principal.engine((long x, long y) -> x - y );
-        Principal.engine((long x, long y) -> x % y );
+        CalculadoraInt objInt = (x, y) -> x + y;
+        Principal.engine(objInt);
     }
 
     // Sobrecarga de Métodos
