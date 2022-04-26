@@ -5,6 +5,26 @@ public class Principal{
         // Solución, agregar el tipo de dato en los parámetros
         CalculadoraInt objInt = (x, y) -> x + y;
         Principal.engine(objInt);
+        CalculadoraInt objInt2 = (x, y) -> x * y;
+        Principal.engine(objInt2);
+        CalculadoraInt objInt3 = (x, y) -> x / y;
+        Principal.engine(objInt3);
+        CalculadoraInt objInt4 = (x, y) -> x - y;
+        Principal.engine(objInt4);
+        CalculadoraInt objInt5 = (x, y) -> x % y;
+        Principal.engine(objInt5);
+ 
+        CalculadoraLong objLong = (x, y) -> x + y;
+        Principal.engine(objLong);
+        CalculadoraLong objLong2 = (x, y) -> x * y;
+        Principal.engine(objLong2);
+        CalculadoraLong objLong3 = (x, y) -> x / y;
+        Principal.engine(objLong3);
+        CalculadoraLong objLong4 = (x, y) -> x - y;
+        Principal.engine(objLong4);
+        CalculadoraLong objLong5 = (x, y) -> x % y;
+        Principal.engine(objLong5);
+ 
     }
 
     // Sobrecarga de Métodos
