@@ -25,12 +25,14 @@ public class Principal{
         CalculadoraLong objLong5 = (x, y) -> x % y;
         Principal.engine(objLong5);
  
+        CalculadoraLong objLong6 = ( x, y ) -> x+y;
+        engine(objLong6);
     }
 
     // Sobrecarga de Métodos
     private static void engine( CalculadoraInt cal ) {
 
-        int x = 2, y = 4;
+        int x = 2, y = 0;
         int resultado = cal.calcular( x, y );
         System.out.println( "Resultado Int = " + resultado );
     }
