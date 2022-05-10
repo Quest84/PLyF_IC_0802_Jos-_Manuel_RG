@@ -54,7 +54,7 @@ public class FP_Functional_01{
         // What to do?
         numbers.stream()                            // ----> Convert to Stream
             .filter( number -> number % 2 == 0 )    // ----> Method Reference ---> Filter = Only Allow Even Numbers
-            .map( FP_Functional_01::isEven )       // ----> Lambda ---> mapping = x -> x * x
+            .map( number -> number * number )       // ----> Lambda ---> mapping = x -> x * x
             .forEach( FP_Functional_01::print );    // ----> Method Reference
         System.out.println("");
     }

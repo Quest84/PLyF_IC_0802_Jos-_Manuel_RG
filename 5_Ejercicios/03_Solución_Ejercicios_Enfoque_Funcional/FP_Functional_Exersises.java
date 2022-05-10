@@ -51,8 +51,10 @@ public class FP_Functional_Exersises {
     private static void printOddNumbersInListFunctional( List<Integer> numbers ) {
 
         numbers.stream()                        // ----> Convert to Stream
-            .filter( FP_Functional_Exersises::isOdd )     // ----> Method Reference ---> Filter = Only Allow Odd Numbers
-            .forEach( FP_Functional_Exersises::printNum );   // ----> Method Reference
+            //.filter( FP_Functional_Exersises::isOdd )     // ----> Method Reference ---> Filter = Only Allow Odd Numbers
+            .filter( number -> number % 2 != 0 )
+            //.forEach( FP_Functional_Exersises::printNum );   // ----> Method Reference
+            .forEach( number -> System.out.print( number + ", " ) );                                                
         System.out.println("");
     }
 
@@ -61,7 +63,8 @@ public class FP_Functional_Exersises {
         numbers.stream()
             .filter( number -> number % 2 != 0 )
             .map ( number -> number*number*number )
-            .forEach( FP_Functional_Exersises::printNum );
+            //.forEach( FP_Functional_Exersises::printNum );
+            .forEach( number -> System.out.print( number + ", " ) );
         System.out.println( "" );
     }
 
@@ -73,7 +76,8 @@ public class FP_Functional_Exersises {
     private static void printAllCoursesFunctional( List<String> courses ) {
 
         courses.stream()
-            .forEach( FP_Functional_Exersises::printStr );
+            //.forEach( FP_Functional_Exersises::printStr );
+            .forEach( course -> System.out.println( course + ", " ) );
         System.out.println( "" );
     }
 
@@ -82,7 +86,8 @@ public class FP_Functional_Exersises {
         courses.stream()
             .filter( course -> course.contains("Spring") )
             .map( course -> course )
-            .forEach( FP_Functional_Exersises::printStr );
+            //.forEach( FP_Functional_Exersises::printStr );
+            .forEach( course -> System.out.println( course + ", " ) );
         System.out.println( "" );
     }
 
@@ -91,7 +96,8 @@ public class FP_Functional_Exersises {
         courses.stream()
             .filter( course -> course.length() >= 4 )
             .map( course -> course )
-            .forEach( FP_Functional_Exersises::printStr );
+            //.forEach( FP_Functional_Exersises::printStr );
+            .forEach( course -> System.out.println( course + ", " ) );
         System.out.println( "" );
     }
 
@@ -103,8 +109,8 @@ public class FP_Functional_Exersises {
     private static void printCharactersInListFunctional( List<String> courses ) {
 
         courses.stream()
-            .forEach( FP_Functional_Exersises::countChar );
+            //.forEach( FP_Functional_Exersises::countChar );
+            .forEach( course -> System.out.println( course + " " + course.length() ) );
         System.out.println( "" );
     }
 }
-
