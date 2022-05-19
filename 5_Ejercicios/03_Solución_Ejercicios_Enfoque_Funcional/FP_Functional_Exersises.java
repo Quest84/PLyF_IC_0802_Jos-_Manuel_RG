@@ -95,7 +95,6 @@ public class FP_Functional_Exersises {
 
         courses.stream()
             .filter( course -> course.length() >= 4 )
-            .map( course -> course )
             //.forEach( FP_Functional_Exersises::printStr );
             .forEach( course -> System.out.println( course + ", " ) );
         System.out.println( "" );
