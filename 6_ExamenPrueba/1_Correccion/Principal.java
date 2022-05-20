@@ -60,7 +60,8 @@ public class Principal {
         PE.operacionPrueba( 
                 a, 
                 PruebaExamen.operacionPrueba( a, b ),
-                PruebaExamen.operacionPrueba( c,c ) );
+                PruebaExamen.operacionPrueba( c, c ) 
+                );
     }
 
 }
