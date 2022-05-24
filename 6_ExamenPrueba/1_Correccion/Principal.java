@@ -7,10 +7,10 @@ public class Principal {
         // 3
         PruebaExamen PE;
         // 4
-        PE = (a, b, c) -> { System.out.println( 1 + 2 + 3 ); };
-        
+        PE = (a, b, c) -> { System.out.println( a + b + c ); };
+        PE.operacionPrueba( 5, 5, 5 ); 
         // 5
-        System.out.println( PruebaExamen.operacionPrueba( 4, 5 ) );
+        System.out.println( PruebaExamen.operacionPrueba( 10, 10 ) );
 
         // 6
         PE.mensajeHola();
@@ -19,27 +19,26 @@ public class Principal {
         PE.mensajeHola( "Test" );
 
         // 8
-        PE = (a, b, c) -> { System.out.println( 1 + ( 2 * 3 ) ); };
+        PE = (a, b, c) -> { System.out.println( a + ( b * c ) ); };
     
         // 9
         PE.operacionPrueba( 
-                3, 
-                PruebaExamen.operacionPrueba( 3, 3 ), 
-                PruebaExamen.operacionPrueba( 3, 3 ) 
+                5, 
+                PruebaExamen.operacionPrueba( 1, 1 ), 
+                PruebaExamen.operacionPrueba( 2, 2 ) 
             );
 
         // Paso 12
         miMetodo( PE );
 
         // 13
-        miMetodo( (a, b, c) -> System.out.println( 1 + ( 4 / 2 ) ) );
+        miMetodo( (a, b, c) -> System.out.println( a + ( b / c ) ) );
 
         // 16
-        PE = ( (a, b, c ) -> System.out.println( 6.0 + ( 7.0 / 8.0 ) ));
-        miMetodo( PE );
+        PE = ( (a, b, c ) -> System.out.println( (float)a + ( (float)b / (float)c ) ));
 
         // 17
-        miMetodo( PE, 1, 3, 3 );
+        miMetodo( PE, 5, 1, 2 );
     }
     
     // Paso 10
@@ -47,9 +46,9 @@ public class Principal {
 
         // Paso 11
         PE.operacionPrueba( 
-                2,
+                5,
                 PruebaExamen.operacionPrueba( 2, 2 ),
-                PruebaExamen.operacionPrueba( 2, 2 )
+                PruebaExamen.operacionPrueba( 3, 3 )
                 );
     }
 
@@ -59,7 +58,7 @@ public class Principal {
         // 15
         PE.operacionPrueba( 
                 a, 
-                PruebaExamen.operacionPrueba( a, b ),
+                PruebaExamen.operacionPrueba( b, b ),
                 PruebaExamen.operacionPrueba( c, c ) 
                 );
     }
