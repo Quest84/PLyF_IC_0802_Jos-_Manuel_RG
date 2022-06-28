@@ -21,27 +21,26 @@ int main( int argc, char* argv ) {
     Estados estado = detenido;
 
     int evento = 0;
-    
+
+    int size = 10;
+    int eventos[10] = { 0, 0, 1, 10, 11, 11, 10, 10, 1, 10 };
+
     printf( "---Estado detenido---\n\n" );
+    
+    printf( "0. goNorte\n" );
+    printf( "1. waitNorte\n" );
+    printf( "2. goEste\n" );
+    printf( "3. waitEste\n" );
+    printf( "Elije el estado en el que quieres posicionarte: ");
+    scanf ("%i", &estado );
 
-    while( 1 ) {
-        // Agregar un array de eventos
-        printf( "0. No_Carros\n" );
-        printf( "01. Carros Este\n" );
-        printf( "10. Carros Norte\n" );
-        printf( "11. Ambos Lados\n" );
-        printf( "Introduce una evento: \n" );
-        scanf( "%i", &evento);
+    for( int i = 0; i < size; i++ ) {
 
-        switch( evento ){
+        printf( "%i. Evento actual: ", i );
+
+        switch( eventos[i] ){
             case noCarros:
-                if( estado == detenido ){
-                    estado = goNorte;
-                    printf( "Llendo al norte\n" );
-                    printf( "estado = %i\n\n", estado );
-                    sleep( 3 );
-                    break;
-                } 
+                printf( "No_Carros\n" );
                 if( estado == goNorte ) {
                     estado = goNorte;
                     printf( "Llendo al norte\n" );
@@ -52,12 +51,13 @@ int main( int argc, char* argv ) {
                 if( estado == waitNorte ) {
                     estado = goEste;
                     printf( "Llendo al este\n" );
+                    printf( "estado = %i\n\n", estado );
                     sleep( 2 );
                     break;
                 }
                 if( estado == goEste ) {
                     estado = goEste;
-                    printf( "Esperando en este\n" );
+                    printf( "Llendo al este\n" );
                     printf( "estado = %i\n\n", estado );
                     sleep(3);
                     break;
@@ -72,6 +72,7 @@ int main( int argc, char* argv ) {
                     
                 break;
             case carrosEste:
+                printf( "CarrosNorte\n" );
                 if( estado == goNorte ) {
                     estado = waitNorte;
                     printf( "Esperando al norte\n" );
@@ -103,6 +104,7 @@ int main( int argc, char* argv ) {
                 break;
 
             case carrosNorte:
+                printf( "CarrosNorte\n" );
                 if( estado == goNorte ) {
                     estado = goNorte;
                     printf( "Llendo al norte\n" );
@@ -134,6 +136,7 @@ int main( int argc, char* argv ) {
                 break;
 
             case ambosLados:
+                printf( "AmbosLados\n" );
                  if( estado == goNorte ) {
                     estado = waitNorte;
                     printf( "Esperando en norte\n" );
@@ -170,7 +173,8 @@ int main( int argc, char* argv ) {
                 break;
         } 
     }
-    
+ 
+    printf( "\nFin del programa!\n" );
     return 0;
 }
 
