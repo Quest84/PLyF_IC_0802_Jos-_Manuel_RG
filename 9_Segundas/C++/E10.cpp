@@ -19,10 +19,10 @@ void printCharactersInListFunctional( std::vector<std::string> courses );
 
 auto print = [](const int& n) { cout << n << ", "; };
 auto isEven = [](const int& n) { return 0 == n % 2; };
-auto isOdd = [](const int& n) { return 1 == n % 2; };
+auto isOdd = [](const int& n) { return 0 == n % 2; };
 auto square = [](const int& n) { return n * n; };
 auto cube = [](const int& n) { return n * n * n; };
-auto printStr = [](const std::string& s ) { cout << s << endl; };
+auto printStr = [](const std::string& s ) { cout << s << ", "; };
 auto isSpring = [](const std::string& s) { return 0 == s.find( "Spring" ); };
 auto has4Letters = [](const std::string& s) { return 0 != ( s.length() >= 4 ); };
 auto printChar = [](const std::string& s) { cout << s << "-> " << s.length() << endl;  };
@@ -34,6 +34,10 @@ int main( int argc, char* argv[] ) {
     std::vector<std::string> courses { "Spring", "Spring Boot", "API",
         "Microservices", "AWS", "PCF", "Azure", "Docker", "Kubernetes" };
 
+    cout << "0. PrintAllNumbersInListFunctional: " << endl;
+    printAllNumbersInListFunctional( numbers );
+    cout << endl << endl;
+    
     cout << "1. Print Only Odd Numbers From the List" << endl;
     printOddNumbersInListFunctional( numbers );
     cout << endl << endl;
@@ -59,9 +63,6 @@ int main( int argc, char* argv[] ) {
     cout << endl << endl;
     
     /*
-    cout << "PrintAllNumbersInListFunctional: " << endl;
-    printAllNumbersInListFunctional( numbers );
-    cout << endl << endl;
  
     cout << "printEvenNumbersInListFunctional: " << endl;
     printEvenNumbersInListFunctional( numbers );
@@ -70,7 +71,6 @@ int main( int argc, char* argv[] ) {
     cout << "printSquaresofEvenNumbersInListFunctional: " << endl;
     printSquaresOfEvenNumbersInListFunctional( numbers );
     cout << endl << endl;
-    */
 
     return 0;
 }
