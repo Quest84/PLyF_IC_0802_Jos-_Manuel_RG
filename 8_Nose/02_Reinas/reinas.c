@@ -1,19 +1,3 @@
-// Problema de las N reinas
-// ------------------------
-
-// Algoritmo recursivo
-//
-// 0. Obviamente, colocaremos una reina en cada fila
-//
-// 1. Se coloca una reina en una casilla de su fila y,
-//    a continuación, se intentan colocar las reinas restantes.
-//
-// 2. Si las demás reinas no se pueden colocar con éxito,
-//    probamos a colocar la reina actual en otra columna.
-//
-// Caso base: Cuando no quedan reinas por colocar.
-
-
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -59,7 +43,6 @@ void mostrarTablero (int reinas[], int n)
   for (i=0; i<n; i++) {
 
       for (j=0; j<n; j++) {
-          printf("reinas[%i] = %i", i, reinas[i]);
           if (reinas[i]==j)
              printf("#");
           else
@@ -89,7 +72,6 @@ int colocarReina (int fila, int reinas[], int n)
      // Quedan reinas por colocar
 
      for (reinas[fila]=0; reinas[fila]<n; reinas[fila]++) {
-        printf("reina[%i] = %i\n", fila, reinas[fila]);
          // Comprobamos si la posición 
          // de la reina actual es válida
 
