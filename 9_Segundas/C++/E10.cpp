@@ -71,7 +71,7 @@ int main( int argc, char* argv[] ) {
     cout << "printSquaresofEvenNumbersInListFunctional: " << endl;
     printSquaresOfEvenNumbersInListFunctional( numbers );
     cout << endl << endl;
-
+    */
     return 0;
 }
 
