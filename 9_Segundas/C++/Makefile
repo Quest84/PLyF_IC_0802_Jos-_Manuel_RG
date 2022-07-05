@@ -1,5 +1,4 @@
 all:
-	time
 	g++ -o E4 E4.cpp
 	#g++ -o E4_fallido E4_fallido.cpp
 	g++ -o E5 E5.cpp
